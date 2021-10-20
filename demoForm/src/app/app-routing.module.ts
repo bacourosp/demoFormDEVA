@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [{ path: 'ContactFormRouter', loadChildren: () => import('./contact-form-module/contact-form-module.module').then(m => m.ContactFormModuleModule) }];
+const routes: Routes = [
+  {
+    path: 'ContactForm',
+    loadChildren: () =>
+      import('./contact-form/contact-form.module').then(
+        (m) => m.ContactFormModule
+      ),
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
